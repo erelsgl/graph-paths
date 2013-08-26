@@ -8,7 +8,6 @@
         "url": "https://github.com/erelsgl/graph-paths.git"
     },
     "dependencies" : {
-        "sylvester" : "*"
     },
     "devDependencies" : {
         "mocha"  : ">=1.0.0",
