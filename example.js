@@ -1,4 +1,4 @@
-var best_paths = require('./graph-paths').best_paths;
+var cheapest_paths = require('./graph-paths').cheapest_paths;
 
 console.log("graph-paths.js demo start");
 
@@ -9,10 +9,10 @@ var costs = [
     [Infinity,Infinity,Infinity,0],
 ];
 
-console.log("costs: ");
+console.log("costs matrix: ");
 console.dir(costs);
 
-console.log("best paths from node #0:");
-console.dir(best_paths(costs, 0)); 
+console.log("cheapest paths from node #0:");
+console.dir(cheapest_paths(costs, 0)); 
 
 console.log("graph-paths.js demo end");

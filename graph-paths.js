@@ -14,7 +14,7 @@
  * 	{ cost: best_cost_from_i, path: best_path_from_i }
  * Uses a simple dynamic programming algorithm. 
  */
-var best_paths = function(costs, start) {
+var cheapest_paths = function(costs, start) {
 	var numnodes = costs.length;
 
 	// initialization:
@@ -54,7 +54,7 @@ var best_paths = function(costs, start) {
 }
 
 module.exports = {
-	best_paths: best_paths
+	cheapest_paths: cheapest_paths
 }
 
 
