@@ -16,6 +16,10 @@
  */
 var cheapest_paths = function(costs, start) {
 	var numnodes = costs.length;
+	if (!costs[start])
+		throw new Error("Node "+start+" does not exist in costs matrix");
+	if (costs[start].length!=numnodes)
+		throw new Error("Costs matrix is not square - it has "+numnodes+" rows and "+costs[start].length+" columns");
 
 	// initialization:
 	var numsteps = 1;
@@ -26,8 +30,8 @@ var cheapest_paths = function(costs, start) {
 			path: targetnode==start? [start]: [start, targetnode]
 		}
 	}
-	
 	for (++numsteps; numsteps<numnodes; ++numsteps) {
+		//console.dir(costs_from_start_using_numsteps);
 		var costs_from_start_using_numsteps_plus_1 = [];
 		for (var targetnode=0; targetnode<numnodes; ++targetnode) {
 			var cost_from_start_through_middle_using_numsteps_plus_1 = [];
@@ -37,6 +41,8 @@ var cheapest_paths = function(costs, start) {
 					costs[middlenode][targetnode];
 			}
 			var bestMiddlenode = argmin(cost_from_start_through_middle_using_numsteps_plus_1);
+			if (!costs_from_start_using_numsteps[bestMiddlenode])
+				throw new Error("costs_from_start_using_numsteps["+bestMiddlenode+"] does not exist");
 			var bestcost =   cost_from_start_through_middle_using_numsteps_plus_1[bestMiddlenode];
 			if (bestcost != costs_from_start_using_numsteps[targetnode].cost) {
 				costs_from_start_using_numsteps_plus_1[targetnode] = {
@@ -62,7 +68,7 @@ module.exports = {
 
 var argmax = function(array, iterator) {
 	var max = -Infinity;
-	var arg = -1;
+	var arg = 0;
 	for (var i=0; i<array.length; ++i) {
 		var element = (iterator? iterator(array[i]): array[i]);
 		if (element>max) {
@@ -75,7 +81,7 @@ var argmax = function(array, iterator) {
 
 var argmin = function(array, iterator) {
 	var min = Infinity;
-	var arg = -1;
+	var arg = 0;
 	for (var i=0; i<array.length; ++i) {
 		var element = (iterator? iterator(array[i]): array[i]);
 		if (element<min) {
