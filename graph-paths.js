@@ -59,12 +59,9 @@ var cheapest_paths = function(costs, start) {
 	return costs_from_start_using_numsteps_plus_1;
 }
 
-module.exports = {
-	cheapest_paths: cheapest_paths
-}
 
 
-// UTILS:
+//UTILS:
 
 var argmax = function(array, iterator) {
 	var max = -Infinity;
@@ -90,4 +87,10 @@ var argmin = function(array, iterator) {
 		}
 	}
 	return arg;
+}
+
+
+
+module.exports = {
+	cheapest_paths: cheapest_paths
 }

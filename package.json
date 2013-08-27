@@ -1,12 +1,13 @@
 {
     "name": "graph-paths",
     "description": "Finding shortest / cheapest paths in a dense graph",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "author": "Erel Segal-haLevi <erelsgl@gmail.com>",
     "repository": {
         "type": "git",
         "url": "https://github.com/erelsgl/graph-paths.git"
     },
+    "main": "./graph-paths.js",
     "dependencies" : {  },
     "devDependencies" : { },
     "keywords": ["graph", "paths", "matrix"]
