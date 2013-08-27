@@ -2,6 +2,10 @@ var cheapest_paths = require('./graph-paths').cheapest_paths;
 
 console.log("graph-paths.js demo start");
 
+/*
+ * The network is defined by a matrix describing the cost of getting from node i to node j.
+ * If there is no way from node i to node j, then the cost is infinite.
+ */
 var costs = [
     [0,1,7,20],
     [Infinity,0,4,19],
