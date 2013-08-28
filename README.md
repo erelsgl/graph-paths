@@ -2,7 +2,7 @@ _graph-paths_ is a small module for finding cheapest (shortest) paths in a dense
 
 ## Installation
 
-    $ npm install should
+    $ npm install graph-paths
 
 ## Example
 ```javascript
