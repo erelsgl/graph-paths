@@ -24,9 +24,6 @@ console.log("cheapest paths from node #0 to all other nodes:");
 console.dir(cheapest_paths_from_0); 
 
 console.log("cheapest path from node #0 to node #3:");
-console.dir(cheapest_paths_from_0[3]); 
+console.dir(cheapest_paths_from_0[3].path); 
 ```
-
-    
-    See example.js for an example.
     
